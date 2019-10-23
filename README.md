@@ -1,4 +1,4 @@
-#TTCom
+# TTCom
 This is my fork of the Team Talk Commander originally by Doug lee of dlee.org.
 I am internally calling this TTCom 4.0 in order to distinguish this version from Doug's version.
 
@@ -16,7 +16,7 @@ This version contains 3 things.
 
 Below is pasted the readme originally provided by Doug Lee himself.
 
-#Readme
+# Readme
 This is TTCom, the TeamTalk Commander, also informally referred to as
 the TeamTalk Console or the TTCom text client.
 

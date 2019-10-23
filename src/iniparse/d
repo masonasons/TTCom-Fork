@@ -1,0 +1,87 @@
+=== modified file 'iniparse/__init__.py'
+6,9c6,9
+< from ini import INIConfig, change_comment_syntax
+< from config import BasicConfig, ConfigNamespace
+< from compat import RawConfigParser, ConfigParser, SafeConfigParser
+< from utils import tidy
+---
+> from .ini import INIConfig, change_comment_syntax
+> from .config import BasicConfig, ConfigNamespace
+> from .compat import RawConfigParser, ConfigParser, SafeConfigParser
+> from .utils import tidy
+11c11
+< from ConfigParser import DuplicateSectionError,    \
+---
+> from configparser import DuplicateSectionError,    \
+=== modified file 'iniparse/compat.py'
+15c15
+< from ConfigParser import DuplicateSectionError,    \
+---
+> from configparser import DuplicateSectionError,    \
+24c24
+< from ConfigParser import Error, InterpolationError, \
+---
+> from configparser import Error, InterpolationError, \
+27c27
+< import ini
+---
+> from . import ini
+59c59
+<             raise ValueError, 'Invalid section name: %s' % section
+---
+>             raise ValueError('Invalid section name: %s' % section)
+91c91
+<         if isinstance(filenames, basestring):
+---
+>         if isinstance(filenames, str):
+146c146
+<             raise ValueError, 'Not a boolean: %s' % v
+---
+>             raise ValueError('Not a boolean: %s' % v)
+237c237
+<                 except KeyError, e:
+---
+>                 except KeyError as e:
+267c267
+<             options.extend(vars.keys())
+---
+>             options.extend(list(vars.keys()))
+286c286
+<         if not isinstance(value, basestring):
+---
+>         if not isinstance(value, str):
+=== modified file 'iniparse/config.py'
+202c202
+<         keys = self._data.keys()
+---
+>         keys = list(self._data.keys())
+=== modified file 'iniparse/ini.py'
+45c45
+< from ConfigParser import DEFAULTSECT, ParsingError, MissingSectionHeaderError
+---
+> from configparser import DEFAULTSECT, ParsingError, MissingSectionHeaderError
+47c47
+< import config
+---
+> from . import config
+468c468
+<         for name, value in defaults.iteritems():
+---
+>         for name, value in defaults.items():
+517c517
+<             fmt = u'\ufeff%s'
+---
+>             fmt = '\ufeff%s'
+554,555c554,555
+<             if linecount == 0 and isinstance(line, unicode):
+<                 if line[0] == u'\ufeff':
+---
+>             if linecount == 0 and isinstance(line, str):
+>                 if line[0] == '\ufeff':
+=== modified file 'iniparse/utils.py'
+1,2c1,2
+< import compat
+< from ini import LineContainer, EmptyLine
+---
+> from . import compat
+> from .ini import LineContainer, EmptyLine

@@ -12,11 +12,13 @@ The iniparse module is under separate license and copyright;
 see that file for details.
 """
 
+from mplib import fix_win32com as fw
 import sys, threading
 from TTComCmd import TTComCmd
 # More for command-line Python support.
 import os, time
 
+fw.fix()
 if __name__ == "__main__":
 	from conf import conf
 	conf.name = "TTCom"

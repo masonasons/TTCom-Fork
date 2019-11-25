@@ -42,7 +42,10 @@ class SoundPool(object):
 	):
 		self.clean_frequency -= 1
 		if self.clean_frequency <= 0:
-			self.clean_unused()
+			try:
+				self.clean_unused()
+			except:
+				pass
 		s = SoundPoolItem(
 			filename=filename,
 			looping=looping,

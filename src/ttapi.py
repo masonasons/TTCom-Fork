@@ -245,7 +245,6 @@ class TeamTalkServerConnection(object):
 		self.notifyCaller("_disconnected_")
 		try: self.sock.close()
 		except: pass
-		self.play("died.wav")
 		self.callback = None
 
 	def pinger(self):

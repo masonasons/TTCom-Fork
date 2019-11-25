@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['ttcom.py'],
-             pathex=['E:\\git\\git\\TTCom-Fork\\src'],
+             pathex=['C:\\Users\\Mason\\Dropbox\\projects\\python\\py3\\git\\TTCom-Fork\\src'],
              binaries=[],
              datas=[],
              hiddenimports=[],

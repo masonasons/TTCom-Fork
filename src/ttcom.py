@@ -22,7 +22,7 @@ fw.fix()
 if __name__ == "__main__":
 	from conf import conf
 	conf.name = "TTCom"
-	conf.version = "4.0.1"
+	conf.version = "4.0.2"
 	args = sys.argv[1:]
 	# Keep args out of the cmd system.
 	del sys.argv[1:]

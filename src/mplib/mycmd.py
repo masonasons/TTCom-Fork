@@ -920,7 +920,7 @@ def say(*args):
 	else:
 		sprefix = os.environ.get("SAYPREFIX")
 		if sprefix: s=sprefix+" "+s
-		subprocess.Popen("spd-say", stdin=subprocess.PIPE, text=True).communicate(s)
+		subprocess.Popen("spd-say "+s)
 
 def cleanForSpeech(m):
 	"""

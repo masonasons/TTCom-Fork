@@ -920,8 +920,7 @@ def say(*args):
 	elif "linux" in plat.lower():
 		sprefix = os.environ.get("SAYPREFIX")
 		if sprefix: s=sprefix+" "+s
-		try: subprocess.Popen("spd-say", stdin=subprocess.PIPE, text=True).communicate(s)
-		except: print(__main__.err())
+		subprocess.Popen("spd-say", stdin=subprocess.PIPE, text=True).communicate(s)
 
 def cleanForSpeech(m):
 	"""

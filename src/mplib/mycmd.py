@@ -921,7 +921,7 @@ def say(*args):
 		sprefix = os.environ.get("SAYPREFIX")
 		if sprefix: s=sprefix+" "+s
 		try: subprocess.Popen("spd-say", stdin=subprocess.PIPE, text=True).communicate(s)
-		except: pass
+		except: print(__main__.err())
 
 def cleanForSpeech(m):
 	"""

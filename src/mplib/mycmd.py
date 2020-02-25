@@ -33,11 +33,13 @@ if sys.platform == 'win32':
 		del os.environ['TZ']
 
 # Full locale handling using user defaults.
-from accessible_output2.outputs import auto
+if sys.platform == 'win32':
+	from accessible_output2.outputs import auto
 import locale
 locale.setlocale(locale.LC_ALL, '')
 
-output=auto.Auto()
+if sys.platform == 'win32':
+	output=auto.Auto()
 import subprocess, time, re, shlex, tempfile
 from cmd import Cmd
 import argparse

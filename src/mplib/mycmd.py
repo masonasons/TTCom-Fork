@@ -913,10 +913,13 @@ def say(*args):
 	elif plat == "darwin": # MacOS
 		cmd = ["say",]
 		sprefix = os.environ.get("SAYPREFIX")
-		if sprefix: s = sprefix +s
+		if sprefix: s=sprefix+s
 		subprocess.Popen(cmd, stdin=subprocess.PIPE, text=True).communicate(s)
 	elif "linux" in plat.lower():
-		pass
+		sprefix = os.environ.get("SAYPREFIX")
+		if sprefix: s=sprefix+" "+s
+		try: subprocess.Popen("spd-say", stdin=subprocess.PIPE, text=True).communicate(s)
+		except: pass
 
 def cleanForSpeech(m):
 	"""

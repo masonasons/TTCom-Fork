@@ -917,7 +917,7 @@ def say(*args):
 		sprefix = os.environ.get("SAYPREFIX")
 		if sprefix: s=sprefix+s
 		subprocess.Popen(cmd, stdin=subprocess.PIPE, text=True).communicate(s)
-	elif "linux" in plat.lower():
+	else:
 		sprefix = os.environ.get("SAYPREFIX")
 		if sprefix: s=sprefix+" "+s
 		subprocess.Popen("spd-say", stdin=subprocess.PIPE, text=True).communicate(s)

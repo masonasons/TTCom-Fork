@@ -1,4 +1,7 @@
 def log(worklog, entry):
 	f=open(worklog, "a")
-	f.write(entry)
+	try:
+		f.write(entry)
+	except:
+		pass
 	f.close()

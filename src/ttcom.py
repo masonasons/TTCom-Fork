@@ -23,7 +23,7 @@ import os, time
 if __name__ == "__main__":
 	from conf import conf
 	conf.name = "TTCom"
-	conf.version = "4.0.3"
+	conf.version = "4.0.4"
 	args = sys.argv[1:]
 	# Keep args out of the cmd system.
 	del sys.argv[1:]

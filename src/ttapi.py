@@ -927,7 +927,8 @@ class TeamtalkServer(object):
 			# Special handling of statuses (mode and message).
 			if k == "statusmsg" or k == "statusmode":
 				if v1 == v2: continue
-				if not statusDone: self.doStatus(buf, parms, oldParms)
+				#if not statusDone:
+					#self.doStatus(buf, parms, oldParms)
 				statusDone = True
 				continue
 			# Special handling of sublocal and subpeer.
@@ -1135,7 +1136,7 @@ class TeamtalkServer(object):
 			buf = "message cleared"
 		if not buf: return
 		# Include the time since the last status change.
-		self.play("status.wav")
+		#self.play("status.wav")
 		statusTime = time.time()
 		if parms.get("statustime") is None:
 			diff = ""
